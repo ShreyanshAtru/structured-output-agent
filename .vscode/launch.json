@@ -1,0 +1,196 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "Streamlit: playground (debug port 8502)",
+      "module": "streamlit",
+      "args": [
+        "run",
+        "${workspaceFolder}/ui/app.py",
+        "--server.address",
+        "127.0.0.1",
+        "--server.port",
+        "8502",
+        "--server.headless",
+        "true",
+        "--server.fileWatcherType",
+        "none",
+        "--server.runOnSave",
+        "false",
+        "--browser.gatherUsageStats",
+        "false"
+      ],
+      "serverReadyAction": {
+        "pattern": "URL: (http://127\\.0\\.0\\.1:8502)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "CLI: classification and retries",
+      "program": "${workspaceFolder}/examples/classify_ticket.py",
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "CLI: validated tool execution",
+      "program": "${workspaceFolder}/examples/tool_ticket.py",
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "CLI: local observability scenarios",
+      "program": "${workspaceFolder}/examples/observe_ticket.py",
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "CLI: live Gemini (uses API quota)",
+      "program": "${workspaceFolder}/examples/live_ticket.py",
+      "env": {
+        "AGENT_MODE": "live",
+        "LLM_PROVIDER": "gemini"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "Pytest: all tests",
+      "module": "pytest",
+      "args": [
+        "tests",
+        "-q",
+        "-s"
+      ],
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "Pytest: current test file",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-q",
+        "-s"
+      ],
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env.example",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "Pytest: Test Explorer debugging",
+      "purpose": [
+        "debug-test"
+      ],
+      "env": {
+        "AGENT_MODE": "fake",
+        "OBSERVABILITY_BACKEND": "local"
+      }
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "name": "CLI: live Codex (ChatGPT subscription)",
+      "program": "${workspaceFolder}/examples/live_ticket.py",
+      "env": {
+        "AGENT_MODE": "live",
+        "LLM_PROVIDER": "codex"
+      }
+    }
+  ]
+}

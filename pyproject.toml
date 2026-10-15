@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structured-output-agent"
+version = "0.1.0"
+description = "Schema-validated LLM outputs with bounded retries and observability"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.10,<3", "pydantic-settings>=2.7,<3", "openai>=2,<3", "logfire>=4,<5", "google-genai>=2.31,<3", "streamlit>=1.50,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+codex-smoke = ["openai-codex==0.162.1"]
+codex = ["openai-codex==0.162.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
